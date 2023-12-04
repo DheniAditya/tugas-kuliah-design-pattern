@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CounterWidget extends StatefulWidget {
   final CounterBloc bloc;
 
-  CounterWidget({Key? key, required this.bloc}) : super(key: key);
+  const CounterWidget({Key? key, required this.bloc}) : super(key: key);
 
   @override
   _CounterWidgetState createState() => _CounterWidgetState();
@@ -16,7 +16,7 @@ class _CounterWidgetState extends State<CounterWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLoC Pattern Example'),
+        title:const Text('BLoC Pattern Example'),
       ),
       body: Center(
         child: StreamBuilder<int>(
@@ -27,7 +27,7 @@ class _CounterWidgetState extends State<CounterWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('${snapshot.data}'),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 Row(
@@ -37,14 +37,14 @@ class _CounterWidgetState extends State<CounterWidget> {
                       onPressed: () {
                         widget.bloc.counterEventSink.add(IncrementEvent());
                       },
-                      child: Text('+'),
+                      child: const Text('+'),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     ElevatedButton(
                       onPressed: () {
                         widget.bloc.counterEventSink.add(DecrementEvent());
                       },
-                      child: Text('-'),
+                      child:const Text('-'),
                     ),
                   ],
                 ),

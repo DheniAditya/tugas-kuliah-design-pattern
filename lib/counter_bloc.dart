@@ -1,6 +1,7 @@
 import 'counter_event.dart';
 import 'dart:async';
 
+//buat class counter bloc
 class CounterBloc {
   int _counter = 0;
   final _counterStateController = StreamController<int>();
@@ -14,6 +15,7 @@ class CounterBloc {
     _counterEventController.stream.listen(_mapEventToState);
   }
 
+//buat function
   void _mapEventToState(CounterEvent event) {
     if (event is IncrementEvent) {
       _counter++;
